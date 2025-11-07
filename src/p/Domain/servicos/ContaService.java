@@ -1,12 +1,10 @@
 package p.Domain.servicos;
 
 import p.Domain.entities.Conta;
-import p.Domain.interfaces.ContaRepImpl;
 import p.Domain.interfaces.IContaRepositorio;
 import p.Domain.tipos.CPF;
 import p.Domain.tipos.NumeroConta;
 
-import java.lang.annotation.Repeatable;
 import java.util.List;
 
 public class ContaService  {

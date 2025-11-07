@@ -4,7 +4,6 @@ import java.util.Optional;
 import p.Domain.entities.Conta;
 import p.Domain.tipos.NumeroConta;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface IContaRepositorio {

@@ -1,6 +1,7 @@
-package p.Domain.interfaces;
+package p.Domain.Infra;
 
 import p.Domain.entities.Conta;
+import p.Domain.interfaces.IContaRepositorio;
 import p.Domain.tipos.NumeroConta;
 
 import java.util.ArrayList;
@@ -11,8 +12,14 @@ public class ContaRepImpl implements IContaRepositorio {
     private final List<Conta> contas = new ArrayList<>();
 
     @Override
-    public void SalvarConta(Conta conta) {
+    public void SalvarConta(Conta conta)
+    {
+        if(existeNumero(conta.getNumero()))
+        {
+            throw new IllegalArgumentException("Número de conta já cadastrado");
+        }
         contas.add(conta);
+
     }
 
     @Override

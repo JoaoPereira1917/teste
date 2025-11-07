@@ -9,4 +9,11 @@ public class Cliente {
         Nome = nome;
         Cpf = cpf;
     }
+    public String getNome() {
+        return Nome;
+    }
+
+    public CPF getCpf() {
+        return Cpf;
+    }
 }
