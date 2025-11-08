@@ -3,8 +3,8 @@ package p.Domain.entities;
 import p.Domain.tipos.CPF;
 
 public class Cliente {
-    String Nome;
-    public CPF Cpf;
+    private final String Nome;
+    private final CPF Cpf;
     public Cliente(String nome, CPF cpf) {
         Nome = nome;
         Cpf = cpf;
@@ -15,5 +15,9 @@ public class Cliente {
 
     public CPF getCpf() {
         return Cpf;
+    }
+    @Override
+    public String toString() {
+        return Nome;
     }
 }

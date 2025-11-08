@@ -5,24 +5,29 @@ import p.Domain.tipos.NumeroConta;
 public abstract class Conta  {
     protected float Saldo;
     private final NumeroConta Numero;
-    public Cliente ClienteAss;//cliente associado
+    private final  Cliente ClienteAss;//cliente associado
     public Conta(Cliente cliente, NumeroConta numero) {
         ClienteAss = cliente;
         Numero = numero;
     }
     // vamo perguntar se ao criar conta, fazer um deposito, se sim usa esse construtor se não valor padrão de saldo = 0 ->>>
     public Conta(Cliente cliente, NumeroConta numero, float saldo) {
+        if (saldo < 0f) throw new IllegalArgumentException("Saldo inicial não pode ser negativo.");
         ClienteAss = cliente;
         Numero = numero;
         Saldo = saldo;
     }
     public void Depositar(float valor) {
-        if(valor > 0){Saldo += valor; System.out.println("Deposito de R$"+valor +" realizado com sucesso");}
-        else throw new IllegalArgumentException("Você precisa depositar algum valor");
+        if (valor <= 0f) throw new IllegalArgumentException("Valor do depósito deve ser positivo.");
+        Saldo += valor;
     }
+
     public void Saque(float valor) {
-        if(valor <= Saldo || valor > 0){Saldo -= valor;}
+        if (valor <= 0f) throw new IllegalArgumentException("Valor do saque deve ser positivo.");
+        if (valor > Saldo) throw new IllegalArgumentException("Saldo insuficiente.");
+        Saldo -= valor;
     }
+
     @Override
     public String toString() {
         return (ClienteAss+" - "+ Numero + " - Saldo: R$"+ Saldo);

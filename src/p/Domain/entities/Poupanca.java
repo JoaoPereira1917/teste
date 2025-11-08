@@ -12,12 +12,10 @@ public class Poupanca extends Conta {
     }
     public void AplicarRendimento(float percentual) {
 
-        if(percentual > 0) {
-            float fator = (1+ percentual)/100;
-            Saldo = Saldo * fator;
+        if (percentual <= 0f) throw new IllegalArgumentException("Percentual deve ser positivo.");
+        float fator = 1f + (percentual / 100f); // CERTO
+        Saldo *= fator;
 
-        }
-        else{throw new RuntimeException("O percentual de rendimendo deve ser maior que zero");}
 
     }
 }
