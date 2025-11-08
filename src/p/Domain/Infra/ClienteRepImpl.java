@@ -26,7 +26,7 @@ public class ClienteRepImpl implements IClienteRepositorio
     }
 
     @Override
-    public Optional<Cliente> BuscarClientes(CPF cpf) {
+    public Optional<Cliente> BuscarCliente(CPF cpf) {
         return clientes.stream()
                 .filter(c -> c.getCpf().equals(cpf))
                 .findFirst();

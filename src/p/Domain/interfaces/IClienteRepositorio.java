@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface IClienteRepositorio {
      List<Cliente> ListarClientes();
-     Optional<Cliente> BuscarClientes(CPF cpf);
+     Optional<Cliente> BuscarCliente(CPF cpf);
      void Cadastrar(Cliente c);
      boolean ExisteCliente(CPF cpf);
 }

@@ -2,15 +2,15 @@ package p.Domain.entities;
 
 import p.Domain.tipos.NumeroConta;
 
-public abstract class Conta {
-    public float Saldo;
-    public NumeroConta Numero;
+public abstract class Conta  {
+    protected float Saldo;
+    private final NumeroConta Numero;
     public Cliente ClienteAss;//cliente associado
     public Conta(Cliente cliente, NumeroConta numero) {
         ClienteAss = cliente;
         Numero = numero;
     }
-    //perguntar se ao criar conta, fazer um deposito, se sim usa esse construtor ->>>
+    // vamo perguntar se ao criar conta, fazer um deposito, se sim usa esse construtor se não valor padrão de saldo = 0 ->>>
     public Conta(Cliente cliente, NumeroConta numero, float saldo) {
         ClienteAss = cliente;
         Numero = numero;
@@ -27,9 +27,13 @@ public abstract class Conta {
     public String toString() {
         return (ClienteAss+" - "+ Numero + " - Saldo: R$"+ Saldo);
     }
+    public float getSaldo() {
+        return Saldo;
+    }
     public NumeroConta getNumero() {
         return Numero;
     }
+
 
 
 
