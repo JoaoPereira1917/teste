@@ -7,6 +7,7 @@ import p.Domain.tipos.CPF;
 import p.Domain.tipos.NumeroConta;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +34,8 @@ public class ClienteRepImpl implements IClienteRepositorio
 
     @Override
     public List<Cliente> ListarClientes() {
-        return new ArrayList<>(clientes);
+        //return new ArrayList<>(clientes);
+        return Collections.unmodifiableList(clientes);
     }
 
     @Override

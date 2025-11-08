@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IClienteRepositorio {
-    public List<Cliente> ListarClientes();
-    public Optional<Cliente> BuscarClientes(CPF cpf);
-    public void Cadastrar(Cliente c);
-    public boolean ExisteCliente(CPF cpf);
+     List<Cliente> ListarClientes();
+     Optional<Cliente> BuscarClientes(CPF cpf);
+     void Cadastrar(Cliente c);
+     boolean ExisteCliente(CPF cpf);
 }
